@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+
+$color1: #c8dae6;
+$color2: white;
+$color3: #b8b8b8;
+$color4: #ffcd41;
+$color5: #2092a9;
+
+body {
+    background-image: url("./assets/back6.jpg");
+    background-color: lighten($color1, 10%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.weather-wrapper {
+    width: 340px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .input {
+        color: #9b9a9a;
+        outline: none;
+        border-style: hidden;
+        width: 200px;
+        height: 35px;
+        border-radius: 5px;
+    }
+    .slidebar {
+        width: 100%;
+        .PrivateValueLabel-offset-3 {
+            font-size: 0.00000000009rem;
+        }
+        .PrivateValueLabel-circle-4 {
+            background-color: transparent;
+        }
+        .MuiTypography-body1 {
+            color: #6b6b6b;
+        }
+        .MuiSlider-root {
+            color: #6b6b6b;
+        }
+        .MuiSlider-markLabel {
+            top: 25px;
+            color: rgba(0, 0, 0, 0.54);
+            position: absolute;
+            font-size: 0.725rem;
+            transform: translateX(-50%);
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.43;
+            white-space: nowrap;
+            letter-spacing: 0.005em;
+        }
+        .MuiSlider-markLabelActive {
+            color: #6b6b6b;
+        }
+        .PrivateValueLabel-label-5 {
+            color: #fff;
+            transform: rotate(45deg);
+        }
+    }
+
+    .next-days {
+        display: inline-flex;
+        width: 100%;
+        height: 25vh;
+    }
+}

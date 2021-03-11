@@ -1,0 +1,171 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+
+$color1: #c8dae6;
+$color2: white;
+$color3: #9e9c9c;
+$color4: #ffcd41;
+$color5: #2092a9;
+
+.next-weather-card {
+    cursor: pointer;
+    margin: 10px 3px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background-color: $color2;
+    box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+    animation: appear 500ms ease-out forwards;
+
+    h1 {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        left: 15px;
+        font-size: 18px;
+        position: relative;
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        color: $color3;
+        bottom: 0;
+        opacity: 0;
+        transform: translateX(150px);
+        animation: title-appear 500ms ease-out 500ms forwards;
+    }
+
+    p {
+        margin-top: 9px;
+        margin-bottom: 0;
+        left: 15px;
+        font-size: 20px;
+        position: relative;
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        color: $color3;
+        bottom: 0;
+        animation: title-appear 1s ease-out 500ms forwards;
+        span {
+            margin-top: 0px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    h2 {
+        position: relative;
+        font-size: 18px;
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        color: $color3;
+        bottom: 0;
+        opacity: 0;
+        transform: translateX(150px);
+        animation: title-appear 500ms ease-out 500ms forwards;
+    }
+}
+
+.weather-icon {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    top: 0;
+    float: right;
+    margin: 15px 5px 0 0;
+    animation: weather-icon-move 5s ease-in-out infinite;
+}
+
+.sun {
+    background: $color4;
+    border-radius: 50%;
+    box-shadow: rgba(255, 255, 0, 0.1) 0 0 0 4px;
+    animation: light 800ms ease-in-out infinite alternate, weather-icon-move 5s ease-in-out infinite;
+}
+
+@keyframes light {
+    from {
+        box-shadow: rgba(255, 255, 0, 0.2) 0 0 0 10px;
+    }
+    to {
+        box-shadow: rgba(255, 255, 0, 0.2) 0 0 0 17px;
+    }
+}
+
+.cloud {
+    margin-right: 60px;
+    background: darken($color1, 5%);
+    border-radius: 20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: darken($color1, 5%) 24px -6px 0 2px, darken($color1, 5%) 10px 5px 0 5px,
+        darken($color1, 5%) 30px 5px 0 2px, darken($color1, 5%) 11px -8px 0 -3px, darken($color1, 5%) 25px 11px 0 -1px;
+
+    &:after {
+        content: "";
+        position: absolute;
+        border-radius: 10px;
+        background-color: transparent;
+        width: 4px;
+        height: 12px;
+        left: 0;
+        top: 31px;
+        transform: rotate(30deg);
+
+        animation: rain 800ms ease-in-out infinite alternate;
+    }
+}
+
+@keyframes rain {
+    from {
+        box-shadow: $color5 8px 0px, $color5 32px -6px, $color5 20px 0px;
+    }
+    to {
+        box-shadow: $color5 8px 6px, $color5 32px 0px, $color5 20px 6px;
+    }
+}
+
+@keyframes weather-icon-move {
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.inspiration {
+    margin-top: 80px;
+    color: darken($color1, 25%);
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    text-align: center;
+
+    a {
+        color: #ff8f8f;
+        font-weight: 400;
+        animation: all 300ms ease-in-out;
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    75% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes title-appear {
+    from {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
