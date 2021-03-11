@@ -56,7 +56,7 @@ const App = () => {
   let hour = today.getHours()
 
   useEffect(() => {
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${params.key}&q=${params.location}&days=7`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${params.key}&q=${params.location}&days=7`)
       .then(response => response.json())
       .then(data => setWeatherInfo(data))
     setTempBool(false)
